@@ -1,0 +1,95 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5b3974bbf0808b6f8209cf8f6137023af21a2e99e20c41f9492858d4ba639baa
+
+name:           todo
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/jzaplana/todo#readme>
+homepage:       https://github.com/jzaplana/todo#readme
+bug-reports:    https://github.com/jzaplana/todo/issues
+author:         Jesus Zaplana
+maintainer:     jesuszaplana@gmail.com
+copyright:      2020 Jesus Zaplana
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/jzaplana/todo
+
+library
+  exposed-modules:
+      Lib
+      ToDo.Commands
+      ToDo.Parsers
+      ToDo.Types
+  other-modules:
+      Paths_todo
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , ansi-terminal
+    , base >=4.7 && <5
+    , bytestring
+    , directory
+    , listsafe
+    , optparse-applicative
+    , strict
+    , text
+    , time
+    , yaml
+  default-language: Haskell2010
+
+executable todo-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_todo
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , ansi-terminal
+    , base >=4.7 && <5
+    , bytestring
+    , directory
+    , listsafe
+    , optparse-applicative
+    , strict
+    , text
+    , time
+    , todo
+    , yaml
+  default-language: Haskell2010
+
+test-suite todo-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_todo
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , ansi-terminal
+    , base >=4.7 && <5
+    , bytestring
+    , directory
+    , listsafe
+    , optparse-applicative
+    , strict
+    , text
+    , time
+    , todo
+    , yaml
+  default-language: Haskell2010
